@@ -1,39 +1,23 @@
 import React from 'react';
+import {View, Text} from 'react-native';
 
-import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './MessageCard.style';
 
-import {formatDistance, parseISO} from 'date-fns';
-import {tr} from 'date-fns/locale';
-import LinearGradient from 'react-native-linear-gradient';
-const MessageCard = ({message, onLike}) => {
-  const formattedDate = formatDistance(parseISO(message.date), new Date(), {
-    addSuffix: true,
-    locale: tr,
-  });
-  return (
+function MessageCard({message}) {
+
+  return !!message.context ? (
     <View style={styles.container}>
       <View style={styles.inner_container}>
-        <Text style={styles.user}>{message.username}</Text>
-        <Text style={styles.user}>{formattedDate}</Text>
+        <Text style={styles.user_text}>{message.username}</Text>
+        <Text style={styles.date_text}>{message.date}</Text>
       </View>
-      <Text style={styles.title}>{message.text}</Text>
-      <View style={styles.footer}>
-        <TouchableOpacity  onPress={onLike}>
-          {!!message.dislike && (
-            <View style={styles.dislike_count_container}>
-              <Text style={styles.dislike_count_text}>{message.dislike}</Text>
-            </View>
-          )}
-          <LinearGradient
-            colors={['#24C6DC', '#514A9D']}
-            style={styles.gradientButton}>
-            <Text style={styles.gradientButtonButtonText}>Napim!</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+      <View style={styles.content}>
+        <Text style={styles.content_text}>{message.context}</Text>
       </View>
     </View>
+  ) : (
+    <View></View>
   );
-};
+}
 
 export default MessageCard;

@@ -1,73 +1,72 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import FlashMessage from 'react-native-flash-message';
-import colors from './styles/colors';
-
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import auth from '@react-native-firebase/auth';
-import Sign from './pages/auth/Sign';
+
+import SignUp from './pages/auth/Sign';
 import Login from './pages/auth/Login';
 import Rooms from './pages/Rooms';
-import Message from './pages/Message';
+import Messages from './pages/Message';
+import colors from './styles/colors';
 
 const Stack = createNativeStackNavigator();
 
-const optionsStack = {
-  title: 'Odalar',
-  headerShown: true,
-  headerTintColor: colors.orange,
-  headerTitleStyle: {
-    fontWeight: 'bold',
-  },
-  headerRight: () => (
-    <Icon
-      name="logout"
-      size={30}
-      color={colors.orange}
-      onPress={() => auth().signOut()}></Icon>
-  ),
-};
+function App() {
+  const [userSession, setUserSession] = React.useState();
 
-const App = () => {
-  const [userSession, setUserSession] = useState();
-
-  useEffect(() => {
+  React.useEffect(() => {
     auth().onAuthStateChanged(user => {
       setUserSession(!!user);
     });
   }, []);
-
   const AuthStack = () => {
     return (
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="LoginPage" component={Login} />
-
-        <Stack.Screen name="SignPage" component={Sign} />
+        <Stack.Screen name="SignUpPage" component={SignUp} />
       </Stack.Navigator>
     );
   };
+
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator>
         {!userSession ? (
-          <Stack.Screen name="AuthStack" component={AuthStack} />
+          <Stack.Screen
+            name="AuthStack"
+            component={AuthStack}
+            options={{headerShown: false}}
+          />
         ) : (
           <Stack.Screen
             name="RoomsPage"
             component={Rooms}
-            options={optionsStack}
+            options={{
+              title: 'Rooms',
+              headerTintColor: colors.orange,
+              headerRight: () => (
+                <Icon
+                  name="logout"
+                  size={40}
+                  color={colors.orange}
+                  onPress={() => auth().signOut()}
+                />
+              ),
+            }}
           />
         )}
         <Stack.Screen
-          name="MessagePage"
-          component={Message}
-          options={optionsStack}
+          name="MessagesPage"
+          component={Messages}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
-      <FlashMessage position="top" />
+      <FlashMessage position="top" duration={3000} statusBarHeight={30}/>
     </NavigationContainer>
   );
-};
+}
 
 export default App;
