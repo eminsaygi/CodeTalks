@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {SafeAreaView, Text, FlatList} from 'react-native';
 import FloatingButton from '../../components/Button/FloatingButton';
-import styles from './Messages.style';
+import styles from './Message.style';
 import ContentInputModal from '../../components/modal/ContentInputModal';
 import parseContentData from '../../utils/parseContentData';
 import auth from '@react-native-firebase/auth';

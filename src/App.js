@@ -8,13 +8,15 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import auth from '@react-native-firebase/auth';
 import Sign from './pages/auth/Sign';
 import Login from './pages/auth/Login';
-import Messages from './pages/Messages';
+import Rooms from './pages/Rooms';
+import Message from './pages/Message';
+
 const Stack = createNativeStackNavigator();
 
 const optionsStack = {
-  title: 'Dertler',
+  title: 'Odalar',
   headerShown: true,
-  headerTintColor: colors.darkgreen,
+  headerTintColor: colors.orange,
   headerTitleStyle: {
     fontWeight: 'bold',
   },
@@ -22,7 +24,7 @@ const optionsStack = {
     <Icon
       name="logout"
       size={30}
-      color={colors.darkgreen}
+      color={colors.orange}
       onPress={() => auth().signOut()}></Icon>
   ),
 };
@@ -52,11 +54,16 @@ const App = () => {
           <Stack.Screen name="AuthStack" component={AuthStack} />
         ) : (
           <Stack.Screen
-            name="MessagesPage"
-            component={Messages}
+            name="RoomsPage"
+            component={Rooms}
             options={optionsStack}
           />
         )}
+        <Stack.Screen
+          name="MessagePage"
+          component={Message}
+          options={optionsStack}
+        />
       </Stack.Navigator>
       <FlashMessage position="top" />
     </NavigationContainer>

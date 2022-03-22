@@ -9,7 +9,7 @@ export default StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: colors.darkgreen,
+    backgroundColor: colors.orange,
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: '#000',
