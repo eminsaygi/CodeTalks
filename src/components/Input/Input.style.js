@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 
 export default StyleSheet.create({
   container: {
@@ -8,11 +8,12 @@ export default StyleSheet.create({
     borderColor: '#e6e6e6',
     margin: 10,
     padding: 10,
-    flexDirection:'row'
+    flexDirection: 'row',
   },
   input: {
-    flex:1,
+    flex: 1,
     fontSize: 16,
     color: '#333',
+    padding: Platform.OS == 'android' ? 0 : 5,
   },
 });
