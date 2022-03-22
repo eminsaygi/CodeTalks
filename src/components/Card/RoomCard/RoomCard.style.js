@@ -4,6 +4,7 @@ import colors from '../../../styles/colors';
 export default StyleSheet.create({
   container: {
     margin: 10,
+    textAlign: 'center',
     padding: 57,
     borderWidth: 1,
     borderRadius: 5,
