@@ -8,7 +8,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     borderColor: '#bdbdbd',
-    backgroundColor: colors.darkgreen,
+    backgroundColor: colors.orange,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
