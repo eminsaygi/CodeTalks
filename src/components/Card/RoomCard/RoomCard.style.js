@@ -3,9 +3,12 @@ import colors from '../../../styles/colors';
 
 export default StyleSheet.create({
   container: {
+    backgroundColor: 'red',
     margin: 10,
+    
     textAlign: 'center',
-    padding: 57,
+
+    padding: 17,
     borderWidth: 1,
     borderRadius: 5,
     borderColor: '#bdbdbd',
