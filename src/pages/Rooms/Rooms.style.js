@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-
+import colors from '../../styles/colors'
 export default StyleSheet.create({
   container: {
     flex: 1,
@@ -8,7 +8,7 @@ export default StyleSheet.create({
   title_container: {
     paddingVertical: 10,
     alignItems: 'center',
-    borderBottomColor: colors.blueBottom,
+    borderBottomColor: colors.orange,
     borderBottomWidth: 2,
   },
   title: {

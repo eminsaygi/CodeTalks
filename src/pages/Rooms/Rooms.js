@@ -1,5 +1,3 @@
-// Rooms.js
-
 import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import database from '@react-native-firebase/database';
@@ -9,8 +7,7 @@ import parseContentData from '../../utils/parseContentData';
 import ContentInputModal from '../../components/modal/ContentInputModal';
 import FloatingButton from '../../components/Button/FloatingButton';
 import styles from './Rooms.style';
-import RoomCard from '../../components/card/RoomCard';
-
+import RoomCard from '../../components/Card/RoomCard'
 function Rooms({navigation}) {
   const [visible, setVisible] = useState(false);
   const [contentList, setContentList] = useState([]);
