@@ -9,7 +9,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
 
     borderWidth: 2,
-    borderRadius: 5,
+    borderRadius: 25,
     borderColor: '#bdbdbd',
     height: Dimensions.get('window').height / 5,
 
