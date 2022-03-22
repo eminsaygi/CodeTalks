@@ -24,9 +24,8 @@ export default StyleSheet.create({
     elevation: 5,
   },
 
-  title: {
+  text: {
     fontSize: 26,
-    textAlign: 'center',
     color: 'white',
     fontWeight: 'bold',
   },
