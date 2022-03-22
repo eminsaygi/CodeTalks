@@ -44,18 +44,16 @@ const Messages = () => {
     database().ref('messages/').push(contentObject);
   }
 
-  function handleLike(item) {
-    database()
-      .ref(`messages/${item.id}/`)
-      .update({dislike: item.dislike + 1});
-  }
   const renderContent = ({item}) => (
     <RoomCard message={item} onLike={null}></RoomCard>
   );
 
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList data={contentList} renderItem={renderContent}></FlatList>
+      <FlatList
+        data={contentList}
+        renderItem={renderContent}
+        numColumns={2}></FlatList>
       <FloatingButton icon="plus" onPress={handleInputToggle} />
 
       <ContentInputModal
