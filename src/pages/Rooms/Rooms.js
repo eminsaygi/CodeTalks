@@ -55,12 +55,12 @@ const Messages = () => {
         data={contentList}
         renderItem={renderContent}
         numColumns={2}></FlatList>
-      <FloatingButton icon="plus" onPress={handleInputToggle} />
 
       <ContentInputModal
-        visible={inputModalVisible}
+        visible={visible}
         onClose={handleInputToggle}
-        onSend={handleSendContent}></ContentInputModal>
+        onSend={handleSendRoom}></ContentInputModal>
+      <FloatingButton icon="plus" onPress={handleInputToggle} />
     </SafeAreaView>
   );
 };
