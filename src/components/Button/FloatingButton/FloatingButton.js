@@ -1,14 +1,14 @@
 import React from 'react';
-import {TouchableOpacity, Text, ActivityIndicator} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import styles from './FloatingButton.style'
 
-import styles from './FloatingButton.style';
-
-const FloatingButton = ({onPress, icon, isLoading}) => {
+const FloatingButton = ({iconName, onPress}) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Icon name={icon} size={30} color="white"></Icon>
+      <Icon name={iconName} color="white" size={30} />
     </TouchableOpacity>
   );
 };
+
 export default FloatingButton;
