@@ -9,12 +9,12 @@ import database from '@react-native-firebase/database';
 import RoomCard from '../../components/Card/RoomCard';
 
 const Messages = () => {
-  const [inputModalVisible, setInputModalVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [contentList, setContentList] = useState([]);
 
   useEffect(() => {
     database()
-      .ref('messages/')
+      .ref('Rooms/')
       .on('value', snapshot => {
         const contentData = snapshot.val();
 
@@ -23,29 +23,30 @@ const Messages = () => {
       });
   }, []);
 
+  const handleRoomPress = room => {
+    navigation.navigate('MessagesPage', room);
+  };
+
   function handleInputToggle() {
-    setInputModalVisible(!inputModalVisible);
+    setVisible(!visible);
   }
 
-  function handleSendContent(content) {
+  const handleSendRoom = roomText => {
     handleInputToggle();
-    sendContent(content);
-  }
+    sendContent(roomText);
+  };
 
-  function sendContent(content) {
-    const userMail = auth().currentUser.email;
-
-    const contentObject = {
-      text: content,
-      username: userMail.split('@')[0],
-      date: new Date().toISOString(),
-      dislike: 0,
+  const sendContent = content => {
+    const user = auth().currentUser.email;
+    const data = {
+      roomCreator: user.split('@')[0],
+      room: content,
     };
-    database().ref('messages/').push(contentObject);
-  }
+    database().ref('Rooms').child(content).push(data);
+  };
 
   const renderContent = ({item}) => (
-    <RoomCard message={item} onLike={null}></RoomCard>
+    <RoomCard rooms={item} onPress={handleRoomPress}></RoomCard>
   );
 
   return (
