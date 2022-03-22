@@ -6,6 +6,7 @@
 </h3>
 
 
+
 ## :rocket: Technologies
 
 The following tools were used in this project:
@@ -18,6 +19,17 @@ The following tools were used in this project:
 - [Xcode](https://developer.apple.com/xcode/)
 - [NodeJs](https://nodejs.org/en/)
 - [Figma](https://www.figma.com)
+
+
+## Tools
+
+- Firebase
+- React Navigation
+- Formik
+- React Native Flash Message
+- React Native Modal
+- React Native Vector Icons
+- React-Native Flash Message
 
 ## :rocket: Libraries Used
 
@@ -40,24 +52,11 @@ Dependencies{
 -   "react-native-vector-icons": "^9.1.0"
     }
 
-DevDependencies {
-
--   "@babel/core": "^7.17.8",
--   "@babel/runtime": "^7.17.8",
--   "@react-native-community/eslint-config": "^3.0.1",
--   "babel-jest": "^27.5.1",
--   "eslint": "^8.11.0",
--   "jest": "^27.5.1",
--   "metro-react-native-babel-preset": "^0.69.1",
--   "react-test-renderer": "17.0.2"
-    }
-
 
 
 ##  Screens Picture
 
-
-
+<img src="images/ss.jpeg" height="500"> <img src="images/ss1.jpeg" height="500"> <img src="images/ss2.jpeg" height="500"> <img src="images/ss3.jpeg" height="500"> <img src="images/ss4.jpeg" height="500"> <img src="images/ss5.jpeg" height="500">
 
 
 
