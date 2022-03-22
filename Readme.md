@@ -54,11 +54,11 @@ DevDependencies {
 
 
 
-## Emulator Videos
+##  Screens Picture
 
-IOS Emulator 
-:-------------------------:
-![Preview](/src/Assets/ScreenShots/gif.gif)
+
+
+
 
 
 MIT License
