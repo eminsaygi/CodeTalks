@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import {View, TextInput} from 'react-native';
 import Modal from 'react-native-modal';
 
-import Button from '';
+import Button from './'
+
 import styles from './ContentInputModal.style';
 
 const ContentInputModal = ({visible, onClose, onSend, placeholder}) => {
