@@ -56,7 +56,7 @@ Dependencies{
 
 ## Screens Picture
 
-<img src="src/assets/screens/ss.jpeg" height="500"> <img src="ssrc/assets/screens/ss1.jpeg" height="500"> <img src="src/assets/screens/ss2.jpeg" height="500"> <img src="src/assets/screens/ss3.jpeg" height="500"> <img src="src/assets/screens/ss4.jpeg" height="500"> <img src="src/assets/screens/ss5.jpeg" height="500">
+<img src="src/assets/screens/ss.jpeg" height="500"> <img src="src/assets/screens/ss1.jpeg" height="500"> <img src="src/assets/screens/ss2.jpeg" height="500"> <img src="src/assets/screens/ss3.jpeg" height="500"> <img src="src/assets/screens/ss4.jpeg" height="500"> <img src="src/assets/screens/ss5.jpeg" height="500">
 
 MIT License
 
