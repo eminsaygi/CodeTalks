@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 import colors from '../../../styles/colors';
 
 export default StyleSheet.create({
@@ -8,10 +8,11 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
 
-    padding: 17,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 5,
     borderColor: '#bdbdbd',
+    height: Dimensions.get('window').height / 5,
+
     backgroundColor: colors.orange,
     shadowColor: '#000',
     shadowOffset: {
