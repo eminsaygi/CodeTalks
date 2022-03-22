@@ -1,21 +1,22 @@
 import React from 'react';
-import {TouchableOpacity, Text, ActivityIndicator} from 'react-native';
-
+import {View, Text, TouchableOpacity, ActivityIndicator} from 'react-native';
 import styles from './LoginButton.style';
 
-const LoginButton = ({text, onPress, loading,theme="primary"}) => {
+const Button = ({icon, onPress, text, loading, theme = 'primary'}) => {
   return (
     <TouchableOpacity
       style={styles[theme].container}
       onPress={onPress}
       disabled={loading}>
       {loading ? (
-        <ActivityIndicator color="white"></ActivityIndicator>
+        <ActivityIndicator color="white" />
       ) : (
-        <Text style={styles[theme].title}>{text}</Text>
+        <View style={styles[theme].button_container}>
+          <Text style={styles[theme].title}>{text}</Text>
+        </View>
       )}
     </TouchableOpacity>
   );
 };
 
-export default LoginButton;
+export default Button;

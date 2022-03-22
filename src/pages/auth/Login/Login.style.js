@@ -1,32 +1,25 @@
-import {StyleSheet, Dimensions} from 'react-native';
-import Colors from '../../../styles/colors';
-const devicesize = Dimensions.get('window');
+import {StyleSheet} from 'react-native';
+
+import colors from '../../../styles/colors';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ff7043',
+    backgroundColor: colors.orange,
   },
-  body_container: {flex: 1},
-  header: {
-    margin: 5,
-    alignItems: 'center',
-    fontSize: devicesize.width * 0.15,
-    fontWeight: 'bold',
-    color: 'white',
-    marginBottom: 20,
-  },
-  footerContainer: {
+  title_container: {
     flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    marginBottom: 20,
+    alignItems:"center",
+    justifyContent:"center"
   },
-  bottomContainer: {
-    flex: 1,
-    justifyContent: 'flex-end',
+  title: {
+    fontSize: 55,
+    color:"#e1f5fe"
   },
-  backButton: {
-    marginBottom: devicesize.height * 0.15,
+  input: {
+    marginBottom: 30,
+  },
+  button: {
+    marginBottom: 50,
   },
 });

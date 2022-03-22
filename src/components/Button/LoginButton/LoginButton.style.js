@@ -1,31 +1,52 @@
-import {StyleSheet} from 'react-native';
-import Colors from '../../../styles/colors'
+import { StyleSheet } from 'react-native';
+import colors from '../../../styles/colors';
+
 const base_style = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    borderRadius: 5,
-    borderColor: '#e6e6e6',
-    padding: 10,
+    padding: 8,
     margin: 10,
+    borderRadius: 5,
+    alignItems: 'center',
   },
-  title: {fontWeight: 'bold', fontSize: 16, color: 'white'},
+  button_container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  title: {
+    marginLeft: 5,
+    fontWeight: 'bold',
+    fontSize: 17,
+  },
 });
+
 export default {
   primary: StyleSheet.create({
     ...base_style,
     container: {
       ...base_style.container,
-      backgroundColor: Colors.darkgreen,
+      backgroundColor: colors.orange,
     },
-    title: {...base_style.title},
+    title: {
+      ...base_style.title,
+      color: 'white',
+    },
   }),
+
   secondary: StyleSheet.create({
+    ...base_style,
     container: {
       ...base_style.container,
       backgroundColor: 'white',
-      borderColor: Colors.darkgreen,
+      borderColor: colors.orange,
       borderWidth: 1,
     },
-    title: {...base_style.title, color: Colors.darkgreen},
+
+    title: {
+      ...base_style,
+      ...base_style.title,
+      color: colors.orange,
+
+
+    },
   }),
 };
