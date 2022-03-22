@@ -5,6 +5,12 @@
   A chat application where coding focused rooms can be created
 </h3>
 
+## Features
+
+- To become a member of the system with the registration form.
+- To be able to log into the system with the registered information.
+- To be able to create the chat room.
+- To be able to chat in the created rooms.
 
 
 ## :rocket: Technologies
@@ -18,7 +24,6 @@ The following tools were used in this project:
 - [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQiAyJOBBhDCARIsAJG2h5eL8TqlTcYWCGcBIPw1fvDCI8-HFaYlvzdfH8GUd_-j9kX9SbFTTJkaAo3MEALw_wcB&gclsrc=aw.ds)
 - [Xcode](https://developer.apple.com/xcode/)
 - [NodeJs](https://nodejs.org/en/)
-- [Figma](https://www.figma.com)
 
 
 ## Tools
