@@ -18,45 +18,11 @@ export default StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
   },
-  inner_container: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  user: {
-    marginVertical: 8,
-    color: '#EEF0EB',
-    fontSize: 15,
-    paddingBottom: 5,
-  },
+
   title: {
-    fontSize: 16,
+    fontSize: 26,
+    textAlign: 'center',
     color: 'white',
     fontWeight: 'bold',
-    paddingBottom: 10,
-  },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-  },
-  dislike_container: {
-    alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    padding: 10,
-  },
-  dislike_count_container: {
-    backgroundColor: '#EEF0EB',
-    borderRadius: 50,
-    padding: 5,
-    marginRight: 5,
-  },
-  gradientButton: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 4,
-  },
-  gradientButtonButtonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 14,
   },
 });
