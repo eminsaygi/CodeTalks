@@ -1,7 +1,16 @@
 # OSX
 #
 .DS_Store
-
+yarn.lock
+metro.config.js
+Gemfile.lock
+Gemfile
+.watchmanconfig
+.ruby-version
+.prettierrc.js
+.flowconfig
+.eslintrc.js
+.buckconfig
 # Xcode
 #
 build/
