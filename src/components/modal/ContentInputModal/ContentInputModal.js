@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, TextInput} from 'react-native';
 import Modal from 'react-native-modal';
 
-import Button from './'
+import Button from '../../Button/LoginButton'
 
 import styles from './ContentInputModal.style';
 
