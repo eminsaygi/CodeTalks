@@ -13,10 +13,6 @@ const MessageCard = ({message, onLike}) => {
   });
   return (
     <View style={styles.container}>
-      <View style={styles.inner_container}>
-        <Text style={styles.user}>{message.username}</Text>
-        <Text style={styles.user}>{formattedDate}</Text>
-      </View>
       <Text style={styles.title}>{message.text}</Text>
     </View>
   );
