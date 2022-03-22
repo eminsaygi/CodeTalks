@@ -3,9 +3,10 @@ import colors from '../../../styles/colors';
 
 export default StyleSheet.create({
   container: {
+    flexDirection: 'column',
     backgroundColor: 'red',
     margin: 10,
-    
+
     textAlign: 'center',
 
     padding: 17,
