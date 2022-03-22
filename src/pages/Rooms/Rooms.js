@@ -1,25 +1,27 @@
-import React, {useState, useEffect} from 'react';
-import {SafeAreaView, Text, FlatList} from 'react-native';
+// Rooms.js
+
+import React, {useEffect, useState} from 'react';
+import {View, Text, FlatList} from 'react-native';
+import database from '@react-native-firebase/database';
+import auth from '@react-native-firebase/auth';
+
+import parseContentData from '../../utils/parseContentData';
+import ContentInputModal from '../../components/modal/ContentInputModal';
 import FloatingButton from '../../components/Button/FloatingButton';
 import styles from './Rooms.style';
-import ContentInputModal from '../../components/modal/ContentInputModal';
-import parseContentData from '../../utils/parseContentData';
-import auth from '@react-native-firebase/auth';
-import database from '@react-native-firebase/database';
-import RoomCard from '../../components/Card/RoomCard';
+import RoomCard from '../../components/card/RoomCard';
 
-const Messages = () => {
+function Rooms({navigation}) {
   const [visible, setVisible] = useState(false);
   const [contentList, setContentList] = useState([]);
 
   useEffect(() => {
     database()
-      .ref('Rooms/')
+      .ref('Rooms')
       .on('value', snapshot => {
         const contentData = snapshot.val();
-
-        const parsedData = parseContentData(contentData || {});
-        setContentList(parsedData);
+        const parse = parseContentData(contentData || {});
+        setContentList(parse);
       });
   }, []);
 
@@ -45,23 +47,24 @@ const Messages = () => {
     database().ref('Rooms').child(content).push(data);
   };
 
-  const renderContent = ({item}) => (
-    <RoomCard rooms={item} onPress={handleRoomPress}></RoomCard>
-  );
+  const renderRoom = ({item}) => {
+    return <RoomCard rooms={item} onPress={handleRoomPress} />;
+  };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={contentList}
-        renderItem={renderContent}
-        numColumns={2}></FlatList>
-
+    <View style={styles.container}>
+      <View>
+        <FlatList data={contentList} renderItem={renderRoom} numColumns={2} />
+      </View>
       <ContentInputModal
         visible={visible}
         onClose={handleInputToggle}
-        onSend={handleSendRoom}></ContentInputModal>
-      <FloatingButton icon="plus" onPress={handleInputToggle} />
-    </SafeAreaView>
+        onSend={handleSendRoom}
+        placeholder="Enter the room"
+      />
+      <FloatingButton iconName={'plus'} onPress={handleInputToggle} />
+    </View>
   );
-};
-export default Messages;
+}
+
+export default Rooms;
