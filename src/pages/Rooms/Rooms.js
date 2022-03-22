@@ -6,7 +6,7 @@ import ContentInputModal from '../../components/modal/ContentInputModal';
 import parseContentData from '../../utils/parseContentData';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
-import MessageCard from '../../components/Card/MessageCard';
+import RoomCard from '../../components/Card/RoomCard';
 
 const Messages = () => {
   const [inputModalVisible, setInputModalVisible] = useState(false);
@@ -50,7 +50,7 @@ const Messages = () => {
       .update({dislike: item.dislike + 1});
   }
   const renderContent = ({item}) => (
-    <MessageCard message={item} onLike={null}></MessageCard>
+    <RoomCard message={item} onLike={null}></RoomCard>
   );
 
   return (
